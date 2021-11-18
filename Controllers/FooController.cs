@@ -16,6 +16,14 @@ public class FooController : ControllerBase
     [HttpGet]
     public string Get()
     {
-        return "FOO";
+        string buildConfig = string.Empty;
+
+#if DEBUG
+    buildConfig = "Debug build"; 
+#else
+    buildConfig = "Release build"; 
+#endif
+
+        return "FOO, from " + buildConfig;
     }
 }
