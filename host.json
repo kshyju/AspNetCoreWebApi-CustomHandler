@@ -1,0 +1,24 @@
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "excludedTypes": "Request"
+      }
+    }
+  },
+  "customHandler": {
+    "description": {
+      "defaultExecutablePath": "bin\\debug\\net6.0\\HelloWebApi.exe",
+      "workingDirectory": "",
+      "arguments": ["--urls=http://localhost:%FUNCTIONS_CUSTOMHANDLER_PORT%"]
+    },
+    "enableForwardingHttpRequest": true
+  },
+  "extensions": {
+    "http": {
+      "routePrefix": ""
+    }
+  }
+}
